@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Bee Cursor</title>
+  <style>
+    body {
+      margin: 0;
+      background: #1e1e1e;
+      cursor: none;
+      overflow: hidden;
+    }
+    svg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 120px;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+</head>
+<body>
+
+<svg id="beeSvg" viewBox="500 250 300 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="BodyEnd" markerWidth="1" markerHeight="1" refX="0" refY="2" orient="auto" markerUnits="strokeWidth">
+      <circle cx="0" cy="2" r="2" fill="#f7b853" />
+    </marker>
+    <marker id="BodyStart" markerWidth="1" markerHeight="1" refX="0" refY="2" orient="auto" markerUnits="strokeWidth">
+      <circle cx="0" cy="2" r="2" fill="#f7b853" />
+    </marker>
+    <clipPath id="EyeMask">
+      <circle cx="440" cy="385" r="175" />
+    </clipPath>
+  </defs>
+
+  <g id="bee">
+    <circle class="eye" cx="629" cy="320" r="15" fill="#f17585" />
+    <circle class="eye" cx="661" cy="320" r="15" fill="#f17585" />
+    <path class="body" id="body" d="M645 368q0 30 0 45" fill="none" stroke="#222" stroke-width="64" stroke-linecap="round" />
+    <path class="body" id="bodyStripes" d="M645 368q0 30 0 45" fill="none" stroke="#f7b853" stroke-width="64" stroke-dasharray="16 16" marker-end="url(#BodyEnd)" marker-start="url(#BodyStart)" />
+    <path id="right" d="M675 348l18 55a25 25 0 0 0 41 11 25 25 0 0 0-6-42z" fill="#528950" />
+    <path id="left" d="M615 348l-18 55a25 25 0 0 1-41 11 25 25 0 0 1 6-42z" fill="#528950" />
+    <ellipse cx="645" cy="378" rx="102" ry="85" fill="rgba(0, 0, 0, 0)" cursor="pointer" />
+  </g>
+
+  <g id="eye">
+    <g clip-path="url(#EyeMask)">
+      <g id="eyeBall">
+        <circle id="whites" cx="440" cy="385" r="175" fill="#fff" />
+        <circle cx="440" cy="385" r="48" fill="#a98358" />
+        <circle cx="440" cy="385" r="20" fill="#222"/>
+      </g>
+    </g>
+  </g>
+</svg>
+
+<script>
+  const bee = document.getElementById("bee");
+  let beeData = { index: 0, buzzAngle: 0, wiggleAngle: 0, timeout: null };
+
+  function buzz(){
+    beeData.index += 2;
+    TweenMax.to(beeData, 2, { delay:0.2, buzzAngle:Math.PI*beeData.index*10, onUpdate:setWingAngle, ease:Sine.easeInOut });
+    TweenMax.staggerTo(".eye", 0.2, { scale:0.8, ease:Quint.easeInOut, transformOrigin:"center" }, 0.1);
+    TweenMax.staggerTo(".eye", 1, { delay:0.2, scale:1, ease:Elastic.easeOut, transformOrigin:"center" }, 0.1);
+    TweenMax.staggerTo(".body", 0.2, { scaleY:0.85, ease:Power4.easeInOut, transformOrigin:"50% -60%" });
+    TweenMax.staggerTo(".body", 1, { delay:0.2, scaleY:1, ease:Elastic.easeOut.config(2), transformOrigin:"50% -60%" });
+  }
+
+  function wiggle(){
+    beeData.index += 2;
+    TweenMax.to(beeData, 1.5, { wiggleAngle:Math.PI*beeData.index*2, onUpdate:setWiggle, ease:Quart.easeInOut });
+  }
+
+  function setWingAngle(){
+    const radians = Math.sin(beeData.buzzAngle);
+    const angle = radians * 20;
+    TweenMax.set("#left", { rotation: angle, transformOrigin: "100% 0%" });
+    TweenMax.set("#right", { rotation: -angle });
+  }
+
+  function setWiggle(){
+    const radians = Math.sin(beeData.wiggleAngle);
+    TweenMax.set(".body", { attr: { d: "M645 368q0 22 " + (radians*10) + " 45" } });
+    TweenMax.set("#bee", { rotation: radians * 6, transformOrigin:"center" });
+  }
+
+  function randomWiggle(){
+    beeData.timeout = setTimeout(randomWiggle, 7000 + (5000 * Math.random()));
+    buzz();
+    wiggle();
+  }
+
+  function poke(e){}
+
+  function onBee(e){
+    poke(e);
+    clearTimeout(beeData.timeout);
+    randomWiggle();
+  }
+
+  bee.addEventListener("click", onBee);
+  randomWiggle();
+
+  // Cursor follow
+  const beeSvg = document.getElementById("beeSvg");
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let currentX = mouseX;
+  let currentY = mouseY;
+
+  document.addEventListener("mousemove", e => {
+    mouseX = e.clientX - 60;
+    mouseY = e.clientY - 60;
+  });
+
+  function followMouse() {
+    currentX += (mouseX - currentX) * 0.1;
+    currentY += (mouseY - currentY) * 0.1;
+    beeSvg.style.transform = `translate(${currentX}px, ${currentY}px)`;
+    requestAnimationFrame(followMouse);
+  }
+
+  followMouse();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Gallery</title> 
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:300%7CQuestrial">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <link rel="stylesheet" href="css/gallery.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+   </head>
+
+    <body>
+
+  <!-- Bee SVG (adjusted viewBox to ensure full visibility) -->
+<svg id="beeSvg" viewBox="550 310 190 140" xmlns="http://www.w3.org/2000/svg">
+  <g id="bee">
+    <!-- Eyes -->
+    <circle class="eye" cx="615" cy="330" r="6" fill="#f17585" />
+    <circle class="eye" cx="630" cy="330" r="6" fill="#f17585" />
+
+    <!-- Body -->
+    <path class="body" d="M622 345q0 15 0 25" fill="none" stroke="#222" stroke-width="28" stroke-linecap="round" />
+    <path class="body" d="M622 345q0 15 0 25" fill="none" stroke="#f7b853" stroke-width="28" stroke-dasharray="8 8" />
+
+    <!-- Wings -->
+    <path id="left" d="M610 343l-14 30a15 15 0 0 1-25 5 15 15 0 0 1 4-25z" fill="#528950" />
+    <path id="right" d="M634 343l14 30a15 15 0 0 0 25 5 15 15 0 0 0-4-25z" fill="#528950" />
+  </g>
+</svg>
+        
+<div class="star-field">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+</div>
+        <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+        <div class="preloader">
+          <div class="preloader-body">
+            <div class="cssload-spinner"><span class="cssload-cube cssload-cube0"></span><span class="cssload-cube cssload-cube1"></span><span class="cssload-cube cssload-cube2"></span><span class="cssload-cube cssload-cube3"></span><span class="cssload-cube cssload-cube4"></span><span class="cssload-cube cssload-cube5"></span><span class="cssload-cube cssload-cube6"></span><span class="cssload-cube cssload-cube7"></span><span class="cssload-cube cssload-cube8"></span><span class="cssload-cube cssload-cube9"></span><span class="cssload-cube cssload-cube10"></span><span class="cssload-cube cssload-cube11"></span><span class="cssload-cube cssload-cube12"></span><span class="cssload-cube cssload-cube13"></span><span class="cssload-cube cssload-cube14"></span><span class="cssload-cube cssload-cube15"></span>
+            </div>
+            <h2 class="preloader-title">Cuantic Designs</h2>
+          </div>
+        </div>
+        <div class="page">
+          <!-- Page Header-->
+          <header class="page-header">
+            <!-- RD Navbar-->
+            <div class="rd-navbar-wrap position-relative">
+              <nav class="rd-navbar" data-layout="rd-navbar-sidebar" data-device-layout="rd-navbar-sidebar" data-sm-layout="rd-navbar-sidebar" data-sm-device-layout="rd-navbar-sidebar" data-md-layout="rd-navbar-sidebar" data-md-device-layout="rd-navbar-sidebar" data-lg-layout="rd-navbar-sidebar" data-lg-device-layout="rd-navbar-sidebar" data-xl-layout="rd-navbar-sidebar" data-xl-device-layout="rd-navbar-sidebar" data-xxl-layout="rd-navbar-sidebar" data-xxl-device-layout="rd-navbar-sidebar" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true" data-auto-height="false" data-sm-auto-height="false" data-md-auto-height="false" data-lg-auto-height="false" data-xl-auto-height="false" data-xxl-auto-height="false">
+                <div class="rd-navbar-main-outer">
+                  <div class="rd-navbar-main">
+                    <!-- RD Navbar Panel-->
+                    <div class="rd-navbar-panel">
+                      <!-- RD Navbar Toggle-->
+                      <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                     
+                    </div>
+                    <div class="rd-navbar-nav-wrap">
+                      <div class="rd-navbar-nav-container">
+                        <!-- RD Navbar Nav-->
+                        <ul class="rd-navbar-nav">
+                          <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
+                          </li>
+                          <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">About</a>
+                          </li>
+                          <li class="rd-nav-item"><a class="rd-nav-link" href="services.html">Services</a>
+                          </li>
+                          <li class="rd-nav-item active"><a class="rd-nav-link" href="galery.html">portfolio</a>
+                          </li>
+                          <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                          </li>
+                        </ul>
+                        <ul class="contacts-classic">
+                          <li>
+                            <div class="contacts-classic-title">Phone:</div><a href="tel:+91 9003190977">+91 9003190977</a>
+                          </li>
+                          <li>
+                            <div class="contacts-classic-title">E-mail:</div><a href="mailTo:Cuanticdesigns@gmail.com">Cuanticdesigns@gmail.com</a>
+                          </li>
+                          <li>
+                            <div class="contacts-classic-title">Follow Us:</div>
+                            <ul class="list-inline list-social list-inline-sm">
+                          <li><a class="icon fa fa-linkedin"  target="_blank" href="https://www.linkedin.com/in/cuantic-designs-023ba3166?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"></a></li>
+                          <li><a class="icon fa fa-facebook"  target="_blank" href="https://www.facebook.com/people/Cuantic-Designs/100092410605187/"></a></li>
+                          <li><a class="icon fa fa-instagram" target="_blank"  href="https://www.instagram.com/cuantic_designs?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="></a></li>
+                        </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </nav>
+            </div>
+          </header>
+
+
+
+
+
+<a href="./index.html" class="floating-home-btn" title="Home">
+  <img src="/images/homewhite.png" alt="Home Icon">
+</a>
+
+
+
+
+
+
+
+          <!-- Cuantic Designs-->
+          <section>
+        <div><div class="brand"><img class="brand-logo-desktop" src="images/all ban/pc1 (4).jpg" alt="" width="100%" height="100%"/>
+          <img class="brand-logo-mobile" src="images/all ban/m1 (4).jpg" alt="" width="100%" height="100%"/></div>
+      </section>
+
+
+ <section class="gallery">
+  <div class="gallery-grid">
+    <img src="images/portfolio/web-01.png" alt="Design 1" class="gallery-item">
+    <img src="images/portfolio/web-02.png" alt="Design 2" class="gallery-item">
+    <img src="images/portfolio/web-03.png" alt="Design 3" class="gallery-item">
+    <img src="images/portfolio/web-04.png" alt="Design 4" class="gallery-item">
+    <img src="images/portfolio/web-05.png" alt="Design 5" class="gallery-item">
+    <img src="images/portfolio/web-06.png" alt="Design 6" class="gallery-item">
+    <img src="images/portfolio/web-07.png" alt="Design 7" class="gallery-item">
+    <img src="images/portfolio/web-08.png" alt="Design 8" class="gallery-item">
+    <img src="images/portfolio/web-09.png" alt="Design 9" class="gallery-item">
+
+    <img src="images/portfolio/work-9.png" alt="Design 1" class="gallery-item">
+    <img src="images/portfolio/work-5.png" alt="Design 2" class="gallery-item">
+    <img src="images/portfolio/work-6.png" alt="Design 3" class="gallery-item">
+    <img src="images/portfolio/work-7.png" alt="Design 4" class="gallery-item">
+    <img src="images/portfolio/work-8.png" alt="Design 5" class="gallery-item">
+    <img src="images/portfolio/work-4.png" alt="Design 6" class="gallery-item">
+    <img src="images/portfolio/work-10.png" alt="Design 7" class="gallery-item">
+    <img src="images/portfolio/work-11.png" alt="Design 8" class="gallery-item">
+    <img src="images/portfolio/work-12.png" alt="Design 9" class="gallery-item">
+    <img src="images/portfolio/work-13.png" alt="Design 6" class="gallery-item">
+    <img src="images/portfolio/work-14.png" alt="Design 7" class="gallery-item">
+    <img src="images/portfolio/work-16.png" alt="Design 8" class="gallery-item">
+    <img src="images/portfolio/work-17.png" alt="Design 9" class="gallery-item">
+    <img src="images/portfolio/work-19.png" alt="Design 8" class="gallery-item">
+    <img src="images/portfolio/work-21.png" alt="Design 9" class="gallery-item">
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox">
+  <span class="lightbox-close" id="closeBtn">&times;</span>
+  <button class="lightbox-prev" id="prevBtn">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Full View">
+  <button class="lightbox-next" id="nextBtn">&#10095;</button>
+</div>
+
+  <!-- Page Footer-->
+  <footer class="section footer-classic section-full section-full-1 section-sm section-inset-2 bg-gray-3 context-dark text-md-center" id="contacts">
+    <div class="container">
+      <div class="subtitle-classic wow fadeInUp">Get in touch</div>
+      <h2><span class="d-inline-block wow fadeInLeft">Let’s work</span> <span class="d-inline-block wow fadeInRight">together</span>
+      </h2>
+      <br>
+          <br>
+<div class="form-container">
+  <form id="contactForm" class="line-form">
+    <input type="text" name="from_name" placeholder="Your Name" required>
+    <input type="email" name="from_email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <div class="form-button text-center">
+              <button class="button button-default wow fadeInUp" type="submit">Send message</button>
+            </div>
+  </form>
+</div>
+    </div>
+    <div class="container">
+      <div class="footer-classic-list-social wow fadeInUp">
+        <ul class="list-inline list-social list-inline-sm">
+                          <li><a class="icon fa fa-linkedin"   target="_blank" href="https://www.linkedin.com/in/cuantic-designs-023ba3166?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"></a></li>
+                          <li><a class="icon fa fa-facebook"   target="_blank" href="https://www.facebook.com/people/Cuantic-Designs/100092410605187/"></a></li>
+                          <li><a class="icon fa fa-instagram"  target="_blank"  href="https://www.instagram.com/cuantic_designs?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="></a></li>
+                        </ul>
+      </div>
+      <p class="rights wow fadeInUp"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>Cuantic Designs</span><span>.&nbsp;</span><span>All rights reserved.</span><br/>Design&nbsp;by&nbsp;<a href="https://www.cuanticdesigns.com/">cuanticdesigns</a></p>
+    </div>
+  </footer>
+<div class="snackbars" id="form-output-global"></div>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+ 
+
+<script src="js/core.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/gallery.js"></script>
+
+</body>
+</html>
