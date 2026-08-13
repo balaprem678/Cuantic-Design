@@ -1,0 +1,122 @@
+.section {
+  padding: 120px 24px;
+  background: var(--c-paper);
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.head {
+  margin-bottom: 72px;
+}
+
+.title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin-top: 20px;
+  line-height: 1;
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.line {
+  position: absolute;
+  top: 12px;
+  left: 4%;
+  right: 4%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--c-accent) 0%, var(--c-accent-2) 50%, var(--c-warm) 100%);
+  opacity: 0.3;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    opacity: 1;
+    transform-origin: left;
+    animation: drawLine 2.5s var(--ease) forwards;
+  }
+}
+
+@keyframes drawLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+}
+
+.node {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 28px;
+}
+
+.nodeDot {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: var(--c-paper);
+  border: 3px solid var(--c-accent);
+  z-index: 2;
+}
+
+.nodeRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--c-accent);
+  opacity: 0.2;
+  animation: pulse-ring 2.5s ease-out infinite;
+  z-index: 1;
+}
+
+.stepContent {
+  h3 {
+    font-size: 1.5rem;
+    margin: 10px 0 12px;
+  }
+
+  p {
+    font-size: 0.96rem;
+    color: var(--c-muted);
+    line-height: 1.6;
+  }
+}
+
+.stepNum {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--c-accent);
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .line {
+    left: 12px;
+    right: auto;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, var(--c-accent) 0%, var(--c-warm) 100%);
+  }
+}

@@ -1,0 +1,126 @@
+.section {
+  padding: 120px 24px;
+  background: var(--c-paper-2);
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.head {
+  margin-bottom: 64px;
+}
+
+.title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin-top: 20px;
+  line-height: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s var(--ease);
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--c-ink);
+    box-shadow: var(--shadow-lg);
+
+    .icon {
+      background: var(--grad-accent);
+      color: #fff;
+      box-shadow: var(--shadow-accent);
+    }
+
+    .index {
+      opacity: 0.1;
+      transform: translate(-4px, 4px);
+    }
+  }
+
+  &:last-child {
+    grid-column: span 1;
+  }
+}
+
+/* Make the 5th card span across to balance the grid */
+.grid > :nth-child(4) {
+  grid-column: span 1;
+}
+.grid > :nth-child(5) {
+  grid-column: span 1;
+}
+
+/* On 3-col grid with 5 items, center the last row */
+@media (min-width: 901px) {
+  .grid > :nth-child(4) {
+    grid-column: 1 / 2;
+  }
+  .grid > :nth-child(5) {
+    grid-column: 2 / 3;
+  }
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--c-accent-soft);
+  color: var(--c-accent);
+  display: grid;
+  place-items: center;
+  margin-bottom: 24px;
+  transition: all 0.4s var(--ease);
+}
+
+.card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 0.96rem;
+  color: var(--c-muted);
+  line-height: 1.6;
+}
+
+.index {
+  position: absolute;
+  bottom: 16px;
+  right: 22px;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  opacity: 0.04;
+  transition: all 0.4s var(--ease);
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid > :nth-child(4),
+  .grid > :nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

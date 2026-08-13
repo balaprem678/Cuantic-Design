@@ -1,0 +1,442 @@
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin: 18px 0 0;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+/* ---------- Story ---------- */
+.story {
+  padding: 100px 0;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.storyText {
+  p {
+    font-size: 1.05rem;
+    color: var(--c-muted);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+}
+
+.storyTitle {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin: 18px 0 28px;
+  line-height: 1.1;
+}
+
+.storyImage {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease);
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+}
+
+/* ---------- How We Work ---------- */
+.how {
+  padding: 100px 0;
+  background: var(--c-paper-2);
+}
+
+.howHead {
+  margin-bottom: 56px;
+}
+
+.howGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.howCard {
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  transition: all 0.4s var(--ease);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-ink);
+    box-shadow: var(--shadow);
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin: 16px 0 10px;
+  }
+
+  p {
+    font-size: 0.94rem;
+    color: var(--c-muted);
+    line-height: 1.6;
+  }
+}
+
+.howNum {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-accent);
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Values ---------- */
+.values {
+  padding: 100px 0;
+}
+
+.valuesHead {
+  margin-bottom: 56px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.valueCard {
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s var(--ease);
+
+  &:hover {
+    border-color: var(--c-ink);
+    box-shadow: var(--shadow);
+
+    .valueIcon {
+      background: var(--grad-accent);
+      color: #fff;
+    }
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin: 20px 0 10px;
+  }
+
+  p {
+    font-size: 0.98rem;
+    color: var(--c-muted);
+    line-height: 1.6;
+  }
+}
+
+.valueIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--c-accent-soft);
+  color: var(--c-accent);
+  display: grid;
+  place-items: center;
+  transition: all 0.4s var(--ease);
+}
+
+/* ---------- Milestones ---------- */
+.milestones {
+  padding: 100px 0;
+  background: var(--c-paper-2);
+}
+
+.milestonesHead {
+  margin-bottom: 56px;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--c-accent), var(--c-warm));
+  opacity: 0.3;
+}
+
+.milestone {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 24px;
+  padding-bottom: 40px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.milestoneNode {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+}
+
+.milestoneDot {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--c-paper);
+  border: 3px solid var(--c-accent);
+}
+
+.milestoneYear {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-accent);
+  letter-spacing: 0.1em;
+}
+
+.milestoneContent {
+  h3 {
+    font-size: 1.35rem;
+    margin: 8px 0 8px;
+  }
+
+  p {
+    font-size: 0.98rem;
+    color: var(--c-muted);
+    line-height: 1.6;
+    max-width: 560px;
+  }
+}
+
+/* ---------- Studio Culture ---------- */
+.culture {
+  padding: 100px 0;
+}
+
+.cultureGrid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.cultureText {
+  p {
+    font-size: 1.05rem;
+    color: var(--c-muted);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+}
+
+.cultureImage {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease);
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+}
+
+/* ---------- Team ---------- */
+.team {
+  padding: 100px 0;
+  background: var(--c-paper-2);
+}
+
+.teamHead {
+  margin-bottom: 56px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 720px;
+}
+
+.teamCard {
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.5s var(--ease);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+
+    .teamImage img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.teamImage {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease);
+  }
+}
+
+.teamInfo {
+  padding: 28px 26px;
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.94rem;
+    color: var(--c-muted);
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+}
+
+.teamRole {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--c-accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 6px;
+}
+
+/* ---------- Training ---------- */
+.training {
+  padding: 100px 0;
+}
+
+.trainingBox {
+  position: relative;
+  background: var(--c-ink);
+  border-radius: var(--radius-xl);
+  padding: 72px 48px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.trainingContent {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+
+  .sectionTitle {
+    color: #fff;
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-top: 24px;
+    margin-bottom: 32px;
+  }
+
+  .eyebrow {
+    color: var(--c-accent-2);
+  }
+}
+
+.trainingGlow {
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(47, 91, 255, 0.4), transparent 70%);
+  z-index: 0;
+}
+
+.trainingLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  padding: 14px 26px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s var(--ease);
+
+  &:hover {
+    background: var(--c-paper);
+    color: var(--c-ink);
+    gap: 16px;
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .storyGrid,
+  .cultureGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .howGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .howGrid {
+    grid-template-columns: 1fr;
+  }
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+  .trainingBox {
+    padding: 48px 24px;
+  }
+}

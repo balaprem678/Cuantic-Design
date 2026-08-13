@@ -1,0 +1,235 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 22px 0;
+  transition: all 0.5s var(--ease);
+}
+
+.scrolled {
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-bottom: 1px solid rgba(230, 229, 224, 0.7);
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoMark {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--grad-accent);
+  display: grid;
+  place-items: center;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(47, 91, 255, 0.35);
+
+  & span {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 3px;
+    transform: rotate(45deg);
+  }
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: 0.02em;
+  color: var(--c-ink);
+
+  & span {
+    color: var(--c-muted);
+    font-weight: 500;
+  }
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(247, 247, 245, 0.6);
+  border: 1px solid var(--c-line-soft);
+  border-radius: 100px;
+  padding: 6px;
+  backdrop-filter: blur(10px);
+}
+
+.navLink {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--c-muted);
+  padding: 9px 16px;
+  border-radius: 100px;
+  transition: all 0.3s var(--ease);
+  position: relative;
+
+  &:hover {
+    color: var(--c-ink);
+  }
+
+  &.active {
+    color: var(--c-ink);
+    background: var(--c-paper);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.9rem;
+  background: var(--c-ink);
+  color: var(--c-paper);
+  padding: 12px 22px;
+  border-radius: 100px;
+  transition: all 0.4s var(--ease);
+
+  &:hover {
+    background: var(--c-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+
+    & svg {
+      transform: translateX(3px);
+    }
+  }
+
+  & svg {
+    transition: transform 0.4s var(--ease);
+  }
+}
+
+.burger {
+  display: none;
+  color: var(--c-ink);
+  padding: 8px;
+}
+
+/* ---------- Mobile drawer ---------- */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--c-paper);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.5s var(--ease);
+
+  &.drawerOpen {
+    transform: translateX(0);
+  }
+}
+
+.drawerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  flex: 1;
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--c-line-soft);
+  color: var(--c-ink);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease), color 0.3s;
+
+  &:hover {
+    color: var(--c-accent);
+  }
+}
+
+.drawerOpen .drawerLink {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.drawerCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--grad-accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 18px;
+  border-radius: 100px;
+  margin-top: 16px;
+  box-shadow: var(--shadow-accent);
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(10, 10, 11, 0.3);
+  backdrop-filter: blur(4px);
+  display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .nav,
+  .cta {
+    display: none;
+  }
+
+  .burger {
+    display: inline-flex;
+  }
+}
