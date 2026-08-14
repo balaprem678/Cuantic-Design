@@ -32,39 +32,14 @@
   display: flex;
   align-items: center;
   gap: 12px;
-}
 
-.logoMark {
-  width: 30px;
-  height: 30px;
-  border-radius: 9px;
-  background: var(--grad-accent);
-  display: grid;
-  place-items: center;
-  position: relative;
-  box-shadow: 0 6px 18px rgba(47, 91, 255, 0.35);
-
-  & span {
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    border-radius: 3px;
-    transform: rotate(45deg);
+  img {
+    width: 120px;
+    height: auto;
   }
 }
 
-.logoText {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.02rem;
-  letter-spacing: 0.02em;
-  color: var(--c-ink);
 
-  & span {
-    color: var(--c-muted);
-    font-weight: 500;
-  }
-}
 
 /* Nav */
 .nav {

@@ -80,3 +80,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+section {
+  padding: 80px 24px;
+  background: var(--c-paper);
+  position: relative;
+  overflow: hidden;
+}
+

@@ -43,25 +43,12 @@
   font-size: 1.05rem;
   letter-spacing: 0.02em;
   margin-bottom: 18px;
-}
-
-.logoMark {
-  width: 30px;
-  height: 30px;
-  border-radius: 9px;
-  background: var(--grad-accent);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 6px 18px rgba(47, 91, 255, 0.4);
-
-  & span {
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    border-radius: 3px;
-    transform: rotate(45deg);
+   img {
+    width: 120px;
+    height: auto;
   }
 }
+
 
 .tagline {
   font-family: var(--font-display);

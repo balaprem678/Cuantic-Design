@@ -6,16 +6,12 @@ import { useEffect, useState } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { NAV_LINKS } from '@/lib/site-data';
 import styles from './Navbar.module.scss';
+import { Images } from '@/components/utilis/Images';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-
-  const isActiveLink = (href: string) => {
-    if (href === '/') return pathname === '/';
-    return pathname === href || pathname.startsWith(`${href}/`);
-  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -40,12 +36,7 @@ export default function Navbar() {
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.inner}>
           <Link href="/" className={styles.logo} aria-label="Cuantic Designs home">
-            <span className={styles.logoMark}>
-              <span />
-            </span>
-            <span className={styles.logoText}>
-              CUANTIC <span>DESIGNS</span>
-            </span>
+            <img src={Images.logo.src} alt="" />
           </Link>
 
           <nav className={styles.nav}>
@@ -53,9 +44,8 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`${styles.navLink} ${
-                  isActiveLink(link.href) ? styles.active : ''
-                }`}
+                className={`${styles.navLink} ${pathname === link.href ? styles.active : ''
+                  }`}
               >
                 {link.label}
               </Link>
@@ -94,14 +84,13 @@ export default function Navbar() {
               href={link.href}
               className={styles.drawerLink}
               style={{ transitionDelay: `${0.06 * i + 0.1}s` }}
-              onClick={() => setOpen(false)}
             >
               <span>{link.label}</span>
               <ArrowRight size={18} />
             </Link>
           ))}
         </nav>
-        <Link href="/contact" className={styles.drawerCta} onClick={() => setOpen(false)}>
+        <Link href="/contact" className={styles.drawerCta}>
           Start a Project <ArrowRight size={18} />
         </Link>
       </div>

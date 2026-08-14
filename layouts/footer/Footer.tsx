@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin, Linkedin, Facebook, Instagram, ArrowUpRight } from 'lucide-react';
 import { SITE, NAV_LINKS, SERVICES } from '@/lib/site-data';
 import styles from './Footer.module.scss';
+import { Images } from '@/components/utilis/Images';
+
 
 export default function Footer() {
   return (
@@ -9,10 +11,7 @@ export default function Footer() {
       <div className={styles.top}>
         <div className={styles.brandCol}>
           <Link href="/" className={styles.logo}>
-            <span className={styles.logoMark}>
-              <span />
-            </span>
-            <span>CUANTIC DESIGNS</span>
+          <img src={Images.logo.src} alt="" />
           </Link>
           <p className={styles.tagline}>{SITE.tagline}</p>
           <p className={styles.desc}>
