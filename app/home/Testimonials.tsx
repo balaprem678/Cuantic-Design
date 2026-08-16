@@ -2,7 +2,7 @@
 
 import { Quote } from 'lucide-react';
 import { TESTIMONIALS } from '@/lib/site-data';
-import Reveal from '../site/Reveal';
+import Reveal from '../../components/site/Reveal';
 import styles from './Testimonials.module.scss';
 
 export default function Testimonials() {

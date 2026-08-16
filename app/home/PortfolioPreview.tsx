@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { PROJECTS } from '@/lib/site-data';
-import Reveal from '../site/Reveal';
+import Reveal from '../../components/site/Reveal';
 import styles from './PortfolioPreview.module.scss';
 
 export default function PortfolioPreview() {

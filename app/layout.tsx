@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import { Space_Grotesk, Inter } from 'next/font/google';
 import './globals.css';
 import './globals.scss';
-import Navbar from '@/layouts/header/Navbar';
-import Footer from '@/layouts/footer/Footer';
 import SmoothScroll from '@/components/site/SmoothScroll';
 import CursorGlow from '@/components/site/CursorGlow';
+import Navbar from '@/layouts/header/Navbar';
+import Footer from '@/layouts/footer/Footer';
+import { Images } from '@/components/utilis/Images';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -31,6 +32,9 @@ export const metadata: Metadata = {
     'digital marketing Chennai',
     'Cuantic Designs',
   ],
+  icons: {
+    icon: Images.favicon.src,
+  },
   openGraph: {
     title: 'Cuantic Designs — Chennai Creative Studio',
     description:

@@ -1,8 +1,8 @@
 'use client';
 
 import { STATS } from '@/lib/site-data';
-import { useCountUp } from '../site/useCountUp';
-import Reveal from '../site/Reveal';
+import { useCountUp } from '../../components/site/useCountUp';
+import Reveal from '../../components/site/Reveal';
 import styles from './StatsBar.module.scss';
 
 function Stat({

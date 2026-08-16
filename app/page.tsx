@@ -1,13 +1,13 @@
-import Hero from '@/components/home/Hero';
-import StatsBar from '@/components/home/StatsBar';
-import WhoWeAre from '@/components/home/WhoWeAre';
-import Services from '@/components/home/Services';
-import Process from '@/components/home/Process';
-import WhyCuantic from '@/components/home/WhyCuantic';
-import PortfolioPreview from '@/components/home/PortfolioPreview';
-import Testimonials from '@/components/home/Testimonials';
-import Faq from '@/components/home/Faq';
-import CtaBand from '@/components/home/CtaBand';
+import Hero from '@/app/home/Hero';
+import StatsBar from '@/app/home/StatsBar';
+import WhoWeAre from '@/app/home/WhoWeAre';
+import Services from '@/app/home/Services';
+import Process from '@/app/home/Process';
+import WhyCuantic from '@/app/home/WhyCuantic';
+import PortfolioPreview from '@/app/home/PortfolioPreview';
+import Testimonials from '@/app/home/Testimonials';
+import Faq from '@/app/home/Faq';
+import CtaBand from '@/app/home/CtaBand';
 
 export default function Home() {
   return (

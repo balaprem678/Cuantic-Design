@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { ArrowRight, ArrowDown } from 'lucide-react';
-import Reveal from '../site/Reveal';
-import MagneticButton from '../site/MagneticButton';
-import { useCountUp } from '../site/useCountUp';
+import Reveal from '../../components/site/Reveal';
+import MagneticButton from '../../components/site/MagneticButton';
+import { useCountUp } from '../../components/site/useCountUp';
 import styles from './Hero.module.scss';
 
 export default function Hero() {

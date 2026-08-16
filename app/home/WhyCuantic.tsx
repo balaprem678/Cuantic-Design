@@ -2,7 +2,7 @@
 
 import { Layers, MessageCircle, CalendarCheck, Zap, MapPin } from 'lucide-react';
 import { REASONS } from '@/lib/site-data';
-import Reveal from '../site/Reveal';
+import Reveal from '../../components/site/Reveal';
 import styles from './WhyCuantic.module.scss';
 
 const ICONS = { Layers, MessageCircle, CalendarCheck, Zap, MapPin };

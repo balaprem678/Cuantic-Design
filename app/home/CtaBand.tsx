@@ -1,8 +1,8 @@
 'use client';
 
 import { ArrowRight, Phone } from 'lucide-react';
-import { ArrowCta } from '../site/MagneticButton';
-import Reveal from '../site/Reveal';
+import { ArrowCta } from '../../components/site/MagneticButton';
+import Reveal from '../../components/site/Reveal';
 import styles from './CtaBand.module.scss';
 
 export default function CtaBand() {

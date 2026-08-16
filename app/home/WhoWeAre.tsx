@@ -2,7 +2,7 @@
 
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import Reveal from '../site/Reveal';
+import Reveal from '../../components/site/Reveal';
 import styles from './WhoWeAre.module.scss';
 
 export default function WhoWeAre() {

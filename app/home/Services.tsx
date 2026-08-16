@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Palette, Code, TrendingUp, Plus } from 'lucide-react';
 import { SERVICES } from '@/lib/site-data';
-import Reveal from '../site/Reveal';
+import Reveal from '../../components/site/Reveal';
 import styles from './Services.module.scss';
 
 const ICONS = { Palette, Code, TrendingUp };

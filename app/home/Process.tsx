@@ -1,7 +1,7 @@
 'use client';
 
 import { PROCESS_STEPS } from '@/lib/site-data';
-import Reveal from '../site/Reveal';
+import Reveal from '../../components/site/Reveal';
 import styles from './Process.module.scss';
 
 export default function Process() {
