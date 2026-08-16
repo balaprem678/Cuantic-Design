@@ -9,6 +9,7 @@ import styles from './Hero.module.scss';
 
 export default function Hero() {
   return (
+    <>
     <section className={styles.hero}>
       {/* Background visuals */}
       <div className={styles.bgGrad} aria-hidden />
@@ -37,14 +38,6 @@ export default function Hero() {
             Graphic Design · Web Development · Digital Marketing — built for
             businesses across Chennai and beyond.
           </Reveal>
-
-          {/* <Reveal as="p" className={styles.desc} delay={3}>
-            We help brands look sharper, launch faster, and market smarter.
-            Cuantic Designs is a full-service creative studio based in Chennai,
-            working with startups and established businesses on everything from
-            logo identity to complete website builds and ongoing digital
-            marketing.
-          </Reveal> */}
 
           <Reveal className={styles.ctas} delay={4}>
             <MagneticButton href="/contact" variant="accent">
@@ -105,5 +98,9 @@ export default function Hero() {
         <ArrowDown size={14} />
       </Link>
     </section>
+
+
+    <canvas id="fluid"></canvas>
+    </>
   );
 }

@@ -8,6 +8,7 @@ import PortfolioPreview from '@/app/home/PortfolioPreview';
 import Testimonials from '@/app/home/Testimonials';
 import Faq from '@/app/home/Faq';
 import CtaBand from '@/app/home/CtaBand';
+import LogoSlider from './home/LogoSlider';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <StatsBar />
       <WhoWeAre />
+      <LogoSlider />
       <Services />
       <Process />
       <WhyCuantic />
