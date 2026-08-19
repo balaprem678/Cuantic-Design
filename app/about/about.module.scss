@@ -1,3 +1,15 @@
+.aboutus_banner {
+  background:
+     linear-gradient(rgb(211 211 211 / 65%), rgb(219 219 219 / 65%)),
+    url("../../Assests/Images/banner/about_banner.png") center center / cover no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  section{
+    background: transparent;
+  }
+}
+
 .container {
   max-width: var(--container);
   margin: 0 auto;

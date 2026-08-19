@@ -18,12 +18,14 @@ const VALUE_ICONS = [Target, Handshake, Sparkles, MapPin];
 export default function AboutPage() {
   return (
     <>
+    <section className={styles.aboutus_banner}>
       <PageHero
         eyebrow="About Cuantic"
         title="A Small Studio, Built for"
         highlight="Direct Work."
         subtitle="Cuantic Designs is a Chennai-based creative studio. We keep the team small on purpose — so you work directly with the people designing and building your project."
-      />
+        />
+        </section>
 
       {/* Our Story */}
       <section className={styles.story}>
