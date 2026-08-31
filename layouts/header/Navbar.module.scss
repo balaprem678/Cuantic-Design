@@ -57,7 +57,7 @@
   font-family: var(--font-display);
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--c-muted);
+  color: #000;
   padding: 9px 16px;
   border-radius: 100px;
   transition: all 0.3s var(--ease);
@@ -68,8 +68,8 @@
   }
 
   &.active {
-    color: var(--c-ink);
-    background: var(--c-paper);
+    color: #fff;
+    background: #e88f20;
     box-shadow: var(--shadow-sm);
   }
 }

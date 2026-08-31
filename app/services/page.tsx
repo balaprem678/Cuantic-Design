@@ -117,12 +117,15 @@ const ENGAGEMENTS = [
 export default function ServicesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Our Services"
-        title="Creative Services Built Around"
-        highlight="Your Business."
-        subtitle="Three disciplines, one team. Design, development, and marketing that work together instead of in silos."
-      />
+
+      <section className={styles.services_banner}>
+        <PageHero
+          eyebrow="Our Services"
+          title="Creative Services Built Around"
+          highlight="Your Business."
+          subtitle="Three disciplines, one team. Design, development, and marketing that work together instead of in silos."
+        />
+      </section>
 
       {/* Engagement options */}
       <section className={styles.engagements}>
