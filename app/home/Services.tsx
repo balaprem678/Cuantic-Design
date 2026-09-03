@@ -33,6 +33,7 @@ export default function Services() {
               <Reveal
                 key={service.slug}
                 className={`${styles.card} ${isOpen ? styles.open : ''}`}
+                dataTone={service.slug}
                 delay={(i + 1) as 1 | 2 | 3}
               >
                 <button

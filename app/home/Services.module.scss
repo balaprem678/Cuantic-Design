@@ -21,14 +21,36 @@
 }
 
 .card {
+  --service-color: #2f5bff;
+  --service-soft: #eef2ff;
+  --service-shadow: rgba(47, 91, 255, 0.24);
   background: var(--c-paper);
   border: 1px solid var(--c-line);
+  border-left: 4px solid var(--service-color);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all 0.5s var(--ease);
 
+  &[data-tone='graphic-design'] {
+    --service-color: #e85d4a;
+    --service-soft: #fff0ed;
+    --service-shadow: rgba(232, 93, 74, 0.24);
+  }
+
+  &[data-tone='web-development'] {
+    --service-color: #2f5bff;
+    --service-soft: #eef2ff;
+    --service-shadow: rgba(47, 91, 255, 0.24);
+  }
+
+  &[data-tone='digital-marketing'] {
+    --service-color: #16866a;
+    --service-soft: #eaf8f2;
+    --service-shadow: rgba(22, 134, 106, 0.22);
+  }
+
   &.open {
-    border-color: var(--c-ink);
+    border-color: var(--service-color);
     box-shadow: var(--shadow-lg);
   }
 }
@@ -60,7 +82,7 @@
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--c-accent);
+  color: var(--service-color);
   letter-spacing: 0.08em;
   flex-shrink: 0;
 }
@@ -69,8 +91,8 @@
   width: 54px;
   height: 54px;
   border-radius: 14px;
-  background: var(--c-accent-soft);
-  color: var(--c-accent);
+  background: var(--service-soft);
+  color: var(--service-color);
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -78,9 +100,9 @@
 }
 
 .open .icon {
-  background: var(--grad-accent);
+  background: var(--service-color);
   color: #fff;
-  box-shadow: var(--shadow-accent);
+  box-shadow: 0 10px 32px var(--service-shadow);
 }
 
 .titles {
@@ -89,6 +111,7 @@
   h3 {
     font-size: clamp(1.4rem, 2.5vw, 1.9rem);
     margin-bottom: 6px;
+    color: var(--service-color);
   }
 }
 
@@ -155,7 +178,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--c-accent);
+  background: var(--service-color);
   flex-shrink: 0;
 }
 
@@ -173,8 +196,8 @@
   transition: all 0.3s var(--ease);
 
   &:hover {
-    color: var(--c-accent);
-    border-color: var(--c-accent);
+    color: var(--service-color);
+    border-color: var(--service-color);
     gap: 14px;
   }
 }
